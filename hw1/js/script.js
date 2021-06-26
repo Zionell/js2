@@ -23,7 +23,6 @@ const cardsProducts = [
 ];
 //----------------------------------------------
 const renderProduct = (item) => {
-   console.log(this)
    return `<div class="product__card shadow filter-card trans">
                <img src="img/product-card${item.id}.jpg" width="360" height="420" alt="Product's card" class="product-card__img">
                <a href="product.html" class="product-card__name">

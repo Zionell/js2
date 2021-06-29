@@ -11,19 +11,18 @@ closeMenu.addEventListener("click", () => {
 
 // Product`s cards
 const cardsProducts = [
-   // { id: 1, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
-   // { id: 2, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
-   // { id: 3, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
-   // { id: 4, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
-   // { id: 5, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
-   // { id: 6, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 1, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 2, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 3, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 4, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 5, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
+   { id: 6, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
    { id: 7, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
    { id: 8, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
    { id: 9, title: "ELLERY X M'O CAPSULE", descProduct: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.", price: 52, quantity: 1, },
 ];
 //----------------------------------------------
 const renderProduct = (item) => {
-   console.log(this)
    return `<div class="product__card shadow filter-card trans">
                <img src="img/product-card${item.id}.jpg" width="360" height="420" alt="Product's card" class="product-card__img">
                <a href="product.html" class="product-card__name">

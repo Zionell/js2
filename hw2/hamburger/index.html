@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <section class="section">
+      <h1 class="header">Choose hamburger</h1>
+      <form action="#">
+         <fieldset>
+            <legend>Size</legend>
+            <label>
+               <input checked type="radio" name="size" value="big" data-cost="100" data-callories="40">
+               Big
+            </label>
+            <label>
+               <input type="radio" name="size" value="small" data-cost="50" data-callories="20">
+               Small
+            </label>
+         </fieldset>
+         <fieldset>
+            <legend>Filling</legend>
+            <label>
+               <input checked type="radio" name="filling" value="cheese" required data-cost="10" data-callories="20">
+               Add cheese
+            </label>
+            <label>
+               <input type="radio" name="filling" value="salad" required data-cost="20" data-callories="5">
+               Add salad
+            </label>
+            <label>
+               <input type="radio" name="filling" value="potato" required data-cost="15" data-callories="10">
+               Add potato
+            </label>
+         </fieldset>
+         <fieldset>
+            <legend>Addition</legend>
+            <label>
+               <input type="radio" name="addition" value="seasoning" data-cost="15" data-callories="0">
+               Add seasoning
+            </label>
+            <label>
+               <input type="radio" name="addition" value="mayonnaise" data-cost="20" data-callories="5">
+               Add mayonnaise
+            </label>
+         </fieldset>
+         <button type="button">Count</button>
+         <fieldset>
+            <legend>Cost</legend>
+            <p class="outCost">0</p>
+         </fieldset>
+         <fieldset>
+            <legend>Cost</legend>
+            <p class="outCallories">0</p>
+         </fieldset>
+      </form>
+   </section>
+   <script src="script.js"></script>
+</body>
+
+</html>

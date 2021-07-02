@@ -120,7 +120,7 @@ class CartProductsList {
    addProduct() { }
    removeProduct() { }
    changeQuantity() { }
-      calcSum() {
+   calcSum() {
       let sum = 0;
       this.CartProducts.forEach(cartProduct => {
          sum += cartProduct.price * cartProduct.quantity;

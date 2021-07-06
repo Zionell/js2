@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+   .input {
+      width: 500px;
+      min-height: 250px;
+      display: block;
+      margin-bottom: 20px;
+   }
+
+   .out {
+      margin-top: 20px;
+      width: 500px;
+      min-height: 250px;
+      border: 1px solid black;
+      word-wrap: break-word;
+      padding: 5px;
+   }
+input{
+   width: 100%;
+}
+   .error {
+      border: 1px solid red;
+      position: relative;
+   }
+
+   .wrap {
+      position: relative;
+      width: 250px;
+      margin-bottom: 30px;
+   }
+
+   .wrapOpen::after {
+      content: "Ошибка";
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 100px;
+      border-radius: 5px;
+      border: 1px solid red;
+   }
+</style>
+
+<body>
+   <h1>1,2</h1>
+   <form action="#">
+      <textarea class="input" placeholder="Напиши текст...."></textarea>
+      <div class="out"></div>
+      <hr>
+      <h1>3</h1>
+      <label>
+         Введите имя
+         <div class="wrap wrap1">
+            <input class="name" type="text" placeholder="Name">
+         </div>
+      </label>
+      <label>
+         Введите телефон
+         <div class="wrap wrap2">
+            <input class="phone" type="text" placeholder="+7(000)000-0000">
+         </div>
+      </label>
+      <label>
+         Введите Email
+         <div class="wrap wrap3">
+            <input class="email" type="text" placeholder="mymail@mail.ru">
+         </div>
+      </label>
+      <label>
+         Напишите комментарий
+         <textarea class="review" type="text" placeholder="some text"></textarea>
+      </label>
+      <button type="button">Click me</button>
+   </form>
+
+   <script src="script.js"></script>
+</body>
+
+</html>

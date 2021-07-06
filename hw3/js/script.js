@@ -116,7 +116,7 @@ class CartProductsList {
          })
    }
    render(evId) {
-      const goodItem = new CartProductsItem(evId, this.products[evId].title, this.products[evId].price, this.products[evId].color, this.products[evId].size);
+      const goodItem = new CartProductsItem(this.products[evId - 1].id_product, this.products[evId - 1].title, this.products[evId - 1].price, this.products[evId - 1].color, this.products[evId - 1].size);
       document.querySelector('.shopping__grid-wrap').insertAdjacentHTML("beforeend", goodItem.render());
    }
    addProduct() {

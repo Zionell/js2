@@ -1,17 +1,4 @@
-//drop menu
-let menu = document.querySelector("#menu");
-let dropMenu = document.querySelector("#dropMenu");
-let closeMenu = document.querySelector("#close");
-menu.addEventListener("click", () => {
-   dropMenu.style.display = "block";
-});
-closeMenu.addEventListener("click", () => {
-   dropMenu.style.display = "none";
-});
-//-----------------------------------------------------
-//--------------------VUE------------------------------
-//-----------------------------------------------------
-const products = new Vue({
+const app = new Vue({
    el: '#app',
    data: {
       products: [],
@@ -35,15 +22,19 @@ const products = new Vue({
          }
       },
       removeProduct(cartProduct) {
-         this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1);
+         if (cartProduct.currentQuantity > 1) {
+            cartProduct.currentQuantity--
+         } else {
+            this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
+         }
+      },
+      closeCart() {
+         if (event.target.classList.contains("cart")) {
+            this.showCart = !this.showCart
+         }
       }
    },
    computed: {
-      filterProduct() {
-         return this.products.filter(product => {
-            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())
-         })
-      },
       counterCart() {
          return this.cartCount = this.cartProducts.length
       }

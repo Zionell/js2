@@ -4,9 +4,10 @@ const app = new Vue({
       products: [],
       cartProducts: [],
       cartCount: 0,
-      allPrice: 0,
+      allPrice: '',
       searchLine: '',
       showCart: false,
+      showModal: false,
       showSearch: false
    },
    methods: {
@@ -18,15 +19,11 @@ const app = new Vue({
          if (!this.cartProducts.includes(product)) {
             this.cartProducts.push(product)
          } else {
-            product.currentQuantity++
+            this.showModal = !this.showModal
          }
       },
       removeProduct(cartProduct) {
-         if (cartProduct.currentQuantity > 1) {
-            cartProduct.currentQuantity--
-         } else {
-            this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
-         }
+         this.cartProducts.splice(this.cartProducts.indexOf(cartProduct), 1)
       },
       closeCart() {
          if (event.target.classList.contains("cart")) {
@@ -44,5 +41,6 @@ const app = new Vue({
          .then(data => {
             this.products = [...data];
          })
-   }
+   },
+   calcSum(){}
 });

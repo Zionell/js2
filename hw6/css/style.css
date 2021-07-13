@@ -1731,6 +1731,59 @@ body {
    transition: all 0.5s linear;
 }
 
+.modal-exist {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 50;
+   height: 100vh;
+   width: 100vw;
+   background: #6f6e6ed1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.exist-wrap {
+   width: 500px;
+   height: 250px;
+   background: #f5f5f5;
+   border-radius: 10px;
+   box-shadow: 0 0 25px rgb(0 0 0 / 90%);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.exist-title {
+   font-size: 25px;
+   font-weight: 900;
+}
+
+.exist-btn {
+   background: #999;
+   width: 70px;
+   height: 30px;
+   border-radius: 7px;
+}
+
+.minus,
+.plus {
+   width: 30px;
+   line-height: 30px;
+   border-radius: 5px;
+   background: #999;
+   font-size: 15px;
+   margin: 0 15px;
+}
+
+.minus:hover,
+.plus:hover {
+   background: #c5d3e0;
+}
+
 @media (min-width: 800px) {
    .input-hover:hover {
       border: 1px solid #e6677893;

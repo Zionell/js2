@@ -239,6 +239,12 @@
                </div>
                <!-- Product -->
                <catalog-products :products="products" :search="searchLine"></catalog-products>
+               <div class="modal-exist" v-show="showModal">
+                  <div class="exist-wrap">
+                     <p class="exist-title">Данный товар уже добавлен в корзину</p>
+                     <button class="exist-btn" @click="showModal=!showModal">OK</button>
+                  </div>
+               </div>
                <!-- Pagination  -->
                <ul class="product-pagination__list">
                   <li class="product-list"><button class="product-list__link"><i
@@ -325,7 +331,7 @@
          <section class="shopping container">
             <!-- Cards container  -->
             <div v-if="cartProducts.length==0" class="cart-empty">Корзина пуста</div>
-            <cart-products v-else :cart="cartProducts"></cart-products>
+            <cart-products v-else :cart="cartProducts" :all-price="allPrice"></cart-products>
             <!-- Form container -->
             <form action="#" class="shopping__form">
                <!-- Delivery registration -->
@@ -367,7 +373,7 @@
                   <p class="shopping-totalcost__small">$0</p>
                   <br>
                   <h5 class="shopping-totalcost__h5 shopping-totalcost__indent">Grand Total</h5>
-                  <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$0</h5>
+                  <h5 class="shopping-totalcost__h5 shopping-totalcost__h5-collor">$ 0</h5>
                   <div class="shopping__border"></div>
                   <button class="shopping-totalcost__button button-hover3" type="submit">Proceed to checkout</button>
                </div>

@@ -1,6 +1,6 @@
 // Catalog
 Vue.component('catalog-products', {
-   props: ['products','search'],
+   props: ['products', 'search'],
    computed: {
       filterProduct() {
          return this.products.filter(product => {
@@ -36,11 +36,24 @@ Vue.component('filterProduct', {
 });
 // Cart 
 Vue.component('cart-products', {
-   props: ['cart'],
-   template: `<cart-product :cart="cart"></cart-product>`
+   props: ['cart', 'all-price'],
+   template: `<cart-product :cart="cart" :all-price="allPrice"></cart-product>`
 });
 Vue.component('cart-product', {
-   props: ['cart'],
+   props: ['cart', 'all-price'],
+   methods: {
+      countQuontity(cartProduct) {
+         if (event.target.classList.contains("fa-plus") || event.target.classList.contains("plus")) {
+            if (cartProduct.currentQuantity < cartProduct.quantity) {
+               cartProduct.currentQuantity++
+            }
+         } else {
+            if (cartProduct.currentQuantity > 1) {
+               cartProduct.currentQuantity--
+            }
+         }
+      }
+   },
    template: ` <div class="shopping__grid-wrap">
                   <div class="shopping__card shadow" v-for="cartProduct in cart">
                      <a href="product.html" class="shopping-card__link">
@@ -50,8 +63,8 @@ Vue.component('cart-product', {
                      </a>
                      <div class="shopping-card__name">
                         <h3 class="shopping-name__h3">{{cartProduct.title}}</h3>
-                        <p class="shopping-card__text">Price: <span
-                              class="shopping-card__text-color">$ {{cartProduct.price*cartProduct.currentQuantity}}</span>
+                        <p class="shopping-card__text">Price: <span 
+                              class="shopping-card__text-color">$ {{ cartProduct.price*cartProduct.currentQuantity}}</span>
                         </p>
                         <p class="shopping-card__text">Color: <span
                               class="shopping-card__text-span">{{cartProduct.color}}</span></p>
@@ -59,8 +72,9 @@ Vue.component('cart-product', {
                               class="shopping-card__text-span">{{cartProduct.size}}</span>
                         </p>
                         <p class="shopping-card__text shopping-card__text-block">Quantity: </p>
-                        <span
-                              class="shopping-card__text-span">{{cartProduct.currentQuantity}}</span>
+                        <button class="minus" @click="countQuontity(cartProduct)"><i  class="fas fa-minus"></i></button>
+                        <span class="shopping-card__text">{{ cartProduct.currentQuantity }}</span>
+                        <button class="plus" @click="countQuontity(cartProduct)"><i  class="fas fa-plus"></i></button>
                      </div>
                      <!-- close button -->
                      <button type="submit" class="shopping-card__close">

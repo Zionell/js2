@@ -1,14 +1,14 @@
 // Catalog
 Vue.component('catalog-products', {
-   props: ['products'],
+   props: ['products','search'],
    computed: {
       filterProduct() {
-         return products.filter(product => {
-            return product.title.toLowerCase().includes(this.searchLine.toLowerCase())
+         return this.products.filter(product => {
+            return product.title.toLowerCase().includes(this.search.toLowerCase())
          })
       }
    },
-   template: `<filterProduct :products="products"></filterProduct>`
+   template: `<filterProduct :products="filterProduct"></filterProduct>`
 });
 Vue.component('filterProduct', {
    props: ['products'],

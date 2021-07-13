@@ -132,7 +132,6 @@
                </ul>
             </div>
          </aside> <!-- New arrivals end -->
-
          <!-- Product  -->
          <section class="product">
             <div class="container product__wrap">
@@ -239,7 +238,7 @@
                   </div>
                </div>
                <!-- Product -->
-               <catalog-products :products="products"></catalog-products>
+               <catalog-products :products="products" :search="searchLine"></catalog-products>
                <!-- Pagination  -->
                <ul class="product-pagination__list">
                   <li class="product-list"><button class="product-list__link"><i
@@ -261,7 +260,6 @@
                </ul>
             </div>
          </section> <!-- Product end -->
-
          <!-- Feature -->
          <aside class="feature">
 
